@@ -4,11 +4,13 @@ function Cart(props) {
   let p=(props.data.price)
   let q=(props.data.quantity)
 
-  let r=p*q;
+  let t=p*q;
   function remove(){
-    localStorage.clear();
+     localStorage.clear();
     window.location.reload()
   }
+ 
+  // console.log(props.array)
   
   return (
     <>
@@ -22,7 +24,7 @@ function Cart(props) {
                 <h2>{props.data.product}</h2>
               </div>
               <div className='row cart-prod-price'>
-                <h3>Total price : ₹{r}</h3>
+                <h3>Total price : ₹{t}</h3>
                 <h4>Qty: {props.data.quantity}</h4>
               </div>
               

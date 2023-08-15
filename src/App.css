@@ -12,8 +12,6 @@
     z-index: 3;
     box-shadow: 0px 3px 7px -2px gray;
 }
-
-
 .logo {
     font-size: 20px;
     font-weight: bolder;
@@ -175,27 +173,19 @@
     margin-top: 5px;
 }
 .TextImageBox{
-    padding: 0px 60px;
-   
+    padding: 10px 60px;
+   margin-bottom: 50px;
 }
 .banner{
-    margin: 100px 0px;
-    /* padding: 0px 60px; */
+    margin: 30px 20px 0px 0px;
     overflow: hidden;
-    height: 400px;
+    /* height: 400px; */
     max-height:1000px;
 }
 .text-box{
     background-color: #E9E9E9;
-    /* display: grid; */
-    /* place-items:center; */
-    /* margin-top: -50px; */
     padding: 9% 10% 10% 10%;
-/* top: 50%;
-left: 50%; */
-/* margin: auto; */
-/* transition: (50%,50%); */
-    /* text-align: start; */
+    max-height: 450px;
 }
 .text-box span h1{
     font-size: 1.5rem;
@@ -208,6 +198,7 @@ left: 50%; */
 }
 .box-image{
     padding: 0px;
+    max-height: 450px;
     /* text-align: end; */
     
 }
@@ -215,7 +206,7 @@ left: 50%; */
     background-color: black;
     color: white;
     font-size: 15px;
-    padding: 5px 10px;
+    padding: 7px 10px;
     border: 2px solid black;
     font-weight: bold;
     cursor: pointer;
@@ -232,7 +223,7 @@ left: 50%; */
 }
 @media screen and (max-width:768px){
     .box-image{
-        visibility: hidden;
+        visibility:none;
     }
 }
 .trending_textAndbutton{
@@ -404,7 +395,7 @@ left: 50%; */
 }
 .product-detail-box{
     background-color: #E5E5E5;
-    padding: 10% 5% 5% 5%;
+    padding: 70px 5% 5% 5%;
     max-height: 600px;
     max-height: 500px;
     margin-top: -50px;
@@ -512,38 +503,43 @@ left: 50%; */
 }
 .other-detailsof-product{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* padding: 50px 60px 50px 60px; */
     padding-left: 80px;
     /* margin-top: 100px; */
     margin-bottom: 100px;
+    padding-right: 80px;
 }
 .other-detail-box{
     background-color: #E5E5E5;
     /* width: 24%; */
     padding:20px;
-    margin-top:70px ;
+   max-width: 300px;
+    margin-top:30px ;
     /* padding-right: 00px; */
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 
 }
 .other-detail-box p{
     font-size: 1rem;
     margin-top: 15px;
 }
+.other-detail-box h3{
+    font-size: 1.3rem;
+}
 button:hover{
     cursor:copy;
 }
 
 .cart{
-
     width: 500px;
     display: flex;
     justify-content: space-evenly;
-    border: 2px solid black;
+    border: 2px solid gray;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
+    box-shadow: 5px 5px 5px black;
 }
 .cartt{
     /* border: 1px solid black; */
@@ -580,7 +576,7 @@ button:hover{
    font-size: 1rem;
     background-color: #B6002C;
     color: white;
-    border: 1px solid #B6002C;
+    border: 2px solid #B6002C;
     width: 50%;
    /* height: 70px; */
     

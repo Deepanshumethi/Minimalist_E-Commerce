@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../Nav'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import TrendingNow from '../TrendingNow'
 import ScrollToTop from '../ScrolltoTop';
+import { useNavigate } from 'react-router-dom'
 // import ProductsWeProud from '../ProductsWeProud'
 function ProductPage(props) {
 
@@ -11,27 +12,34 @@ function ProductPage(props) {
     const data = location.state;
     // console.log("yeh h product page pr aaya hua data=> ", data);
     const [image, setImage] = useState(data.image)
-    
+    const navigate = useNavigate();
     // console.log(count)
     //    console.log(number);
-    
-    const [count, setCount] = useState(data.quantity);
+
+    const [count, setCount] = useState(1);
+    // useEffect(()=>{
+    //     setCount(props.count)
+    // },[])
     // let count=0;
     if ((image !== data.image) && (image !== data.image2) && (image !== data.image3)) {
         setImage(data.image)
         setCount(1);
     }
-// const[value,setValue]=useState(1)
-        function addToCard(){
-                 data.quantity=count;
-                 localStorage.setItem(data.id, JSON.stringify(data));
-               
-                document.getElementsByClassName("Addto").innerHTML="Added";
-                window.location.reload()
-                
-        }
-    
-   
+    const [value, setValue] = useState(0)
+
+    function addToCard() {
+        data.quantity = count;
+        localStorage.setItem(data.id, JSON.stringify(data));
+        setValue(localStorage.length)
+    }
+    function buyNow() {
+        data.quantity = count;
+        localStorage.setItem(data.id, JSON.stringify(data));
+        setValue(localStorage.length)
+        navigate('/cart')
+    }
+
+
     return (
         <>
 
@@ -67,25 +75,25 @@ function ProductPage(props) {
                                 Quantity
                             </div>
                             <div className='col-lg-6 col-12  adjust-quantity'>
-                                <button className='minus' onClick={()=>{setCount(count-1)}} disabled={count===0} >-</button>
-                              
+                                <button className='minus' onClick={() => { setCount(count - 1) }} disabled={count === 1} >-</button>
+
                                 <button className='value'>{count}</button>
-                                <button className='plus' onClick={()=>{setCount(count+1)}}>+</button>
-                                
+                                <button className='plus' onClick={() => { setCount(count + 1) }}>+</button>
+
                             </div>
 
                         </div>
                         <div className='row product-price-tag'>
-                        ₹{data.price}
+                            ₹{data.price}
                         </div>
                         <div className='row addAndBuy-btn'>
                             <div className='col-12 '>
-                            <span type='button' className='Addto' onClick={()=>addToCard()}>Add To Cart</span>
-                               
-                                
+                                <span type='button' className='Addto' onClick={() => addToCard()}>Add To Cart</span>
+
+
                             </div>
                             <div className='col-12'>
-                                <button className='Buy'>Buy Now</button>
+                                <button className='Buy' onClick={() => buyNow()}>Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -96,17 +104,17 @@ function ProductPage(props) {
             <div className='container-fluid other-details'>
                 <div className='row other-detailsof-product'>
 
-                    <div className='col-3 other-detail-box'>
+                    <div className='col-lg-4 col-12 other-detail-box'>
                         <h3>Texture:</h3>
                         <p>{data.texture}</p>
                     </div>
-                    <div className='col-1'></div>
-                    <div className='col-3 other-detail-box'>
+                    {/* <div className='col-1'></div> */}
+                    <div className='col-lg-4 col-12 other-detail-box'>
                         <h3>Weight</h3>
                         <p>{data.weight}</p>
                     </div>
-                    <div className='col-1'></div>
-                    <div className='col-3 other-detail-box'>
+                    {/* <div className='col-1'></div> */}
+                    <div className='col-lg-4 col-12 other-detail-box'>
                         <h3>Size</h3>
                         <p>{data.size}</p>
                     </div>
