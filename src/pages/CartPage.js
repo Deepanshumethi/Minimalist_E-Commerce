@@ -6,15 +6,14 @@ import { useNavigate } from 'react-router-dom'
 // import ProductPage from './ProductPage'
 import { Link } from 'react-router-dom'
 function CartPage() {
-  console.log("hello")
+  // console.log("hello")
  let arr=[];
   // const [data, setdata] = useState()
-  console.log("hello1")
+  // console.log("hello1")
   
     for(let key in localStorage){
      if(localStorage.hasOwnProperty(key)){
       arr.push(JSON.parse(localStorage.getItem(key)))
-    
      }
     
     }
@@ -41,6 +40,7 @@ function CartPage() {
         (localStorage.length>0 ? 
         arr.map((value)=>
         <Cart data={value} array={arr}/>
+        
         )
         :<div className='empty_cart'>
           <img src='image/Empty_cart.png'/>

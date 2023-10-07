@@ -10,7 +10,7 @@ const navigate = useNavigate();
   function handlePage(event){
     navigate('/productpage' ,{state:props.product});
   }
-  console.log("yeh h product page pr props s aaya data => ",props.product)
+  // console.log("yeh h product page pr props s aaya data => ",props.product)
   return (
     <>
     

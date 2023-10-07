@@ -118,7 +118,7 @@ function ProductPage(props) {
                         <h3>Size</h3>
                         <p>{data.size}</p>
                     </div>
-                    <div className='col-1'></div>
+                    {/* <div className='col-1'></div> */}
                 </div>
             </div>
             <TrendingNow onClick={() => { <ScrollToTop /> }} />

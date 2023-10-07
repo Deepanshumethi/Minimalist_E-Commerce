@@ -10,6 +10,7 @@
     /* transition: all 0.3s ease-in; */
     /* bottom: 10px; */
     z-index: 3;
+    /* width: 100%; */
     box-shadow: 0px 3px 7px -2px gray;
 }
 .logo {
@@ -238,7 +239,7 @@
 
 .trending_cards{
     margin: 70px 0px;
-    padding: 0px 60px;
+    padding: 0px 20px;
     display: flex;
     /* overflow: hidden; */
     overflow: scroll; 
@@ -396,11 +397,16 @@
 .product-detail-box{
     background-color: #E5E5E5;
     padding: 70px 5% 5% 5%;
-    max-height: 600px;
+    /* max-height: 600px; */
     max-height: 500px;
     margin-top: -50px;
     /* z-index: -1; */
     
+}
+@media screen and (max-width:500px){
+    .product-detail-box{
+        max-height: fit-content;
+    }
 }
 .product-description {
     font-size: 1rem;
@@ -516,6 +522,7 @@
     padding:20px;
    max-width: 300px;
     margin-top:30px ;
+    text-align: center;
     /* padding-right: 00px; */
     /* margin-bottom: 100px; */
 
@@ -532,7 +539,8 @@ button:hover{
 }
 
 .cart{
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: space-evenly;
     border: 2px solid gray;
@@ -543,12 +551,15 @@ button:hover{
 }
 .cartt{
     /* border: 1px solid black; */
-    width: 100%;
+    /* width: 100%; */
+   
 }
 
 .cart-image{
     height: 150px;
     margin-top:20px ;
+    /* display: flex;
+    justify-content: center; */
     /* border: 1px solid black; */
 }
 
@@ -567,7 +578,7 @@ button:hover{
 }
 .delete-btn-cart{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     margin-top: 10px;
 }
 .delete-btn-cart button{

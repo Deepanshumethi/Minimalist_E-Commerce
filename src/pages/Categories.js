@@ -16,7 +16,7 @@ function Categories(props) {
         filteredCategorie = products.filter(function (product) {
             return (product.categorie == mainCategorie)
         })
-        console.log("yeh hai woh filterd products => ",filteredCategorie)
+        // console.log("yeh hai woh filterd products => ",filteredCategorie)
         const navigate = useNavigate();
 
         function handleClickHome(event){
